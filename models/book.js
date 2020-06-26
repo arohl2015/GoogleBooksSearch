@@ -1,3 +1,4 @@
+//creating the schema for our db
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -6,7 +7,7 @@ const bookSchema = new Schema({
   authors: [],
   description: { type: String },
   image: { type: String },
-  infoLink: { type: String, unique: true },
+  link: { type: String, unique: true },
 });
 
 const Book = mongoose.model("books", bookSchema);
