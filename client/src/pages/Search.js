@@ -55,21 +55,24 @@ class Search extends Component {
               handleInputChange={this.handleInputChange}
             />
           </Jumbotron>
+          {this.state.books.length ? 
+          
           <Wrapper>
             <div style={{ padding: "25px" }}>
-              {this.state.books.map((book) => (
+              {this.state.books.items.map((book) => (
                 <Container
-                  sender="Search"
+                sender="Search"
                   title={book.volumeInfo.title}
                   authors={book.volumeInfo.authors}
                   description={book.volumeInfo.description}
                   image={book.volumeInfo.imageLinks.thumbnail}
                   link={book.volumeInfo.infoLink}
                   saveBook={this.saveBook}
-                ></Container>
-              ))}
+                  ></Container>
+                  ))}
             </div>
           </Wrapper>
+              : <h2>no books</h2> }
         </div>
       );
     }

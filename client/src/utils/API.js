@@ -5,7 +5,7 @@ export default {
 // Get book from google search 
 getGoogleSearchBooks: function(query) {
     //using the googleAPI from https://developers.google.com/books/docs/v1/getting_started#REST
-    return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query)
+    return axios.get("/api/google", { params: { q: "title:" + query } });
 },
   // Gets all books
   getBooks: function() {
