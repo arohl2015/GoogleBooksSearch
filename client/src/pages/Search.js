@@ -15,16 +15,24 @@ class Search extends Component {
       const { name, value } = event.target;
       this.setState({
         [name]: value,
+
       });
+    //   console.log(this.state);
+      
     };
     handleFormSubmit = (event) => {
       event.preventDefault();
-      API.getBooks(this.state.search)
-        .then(({ data }) =>
-          this.setState({ books: data }, () => console.log(this.state.books))
-        )
-        .catch((err) => console.log(err));
-    };
+      console.log(this.state.search);
+      API.getGoogleSearchBooks(this.state.search)
+        .then( (data)  => {
+            console.log(data);
+            
+            this.setState({ books: data.data }
+                )
+        })
+          
+        .catch((err) => console.log(err))
+        };
     saveBook = (index) => {
       console.log(this.state.books[index]);
       const savingBook = {
@@ -50,7 +58,7 @@ class Search extends Component {
           <Jumbotron>
             <Nav />
             <Form
-              value={this.state.search}
+              search={this.state.search}
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
             />
@@ -59,14 +67,15 @@ class Search extends Component {
           
           <Wrapper>
             <div style={{ padding: "25px" }}>
-              {this.state.books.items.map((book) => (
+              {this.state.books.map((book) => (
                 <Container
+                key={book.title}
                 sender="Search"
-                  title={book.volumeInfo.title}
-                  authors={book.volumeInfo.authors}
-                  description={book.volumeInfo.description}
-                  image={book.volumeInfo.imageLinks.thumbnail}
-                  link={book.volumeInfo.infoLink}
+                  title={book.title}
+                  authors={book.authors}
+                  description={book.description}
+                //   image={book.imageLinks.thumbnail}
+                  link={book.infoLink}
                   saveBook={this.saveBook}
                   ></Container>
                   ))}

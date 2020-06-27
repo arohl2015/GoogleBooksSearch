@@ -4,6 +4,8 @@ import axios from "axios";
 export default {
 // Get book from google search 
 getGoogleSearchBooks: function(query) {
+    console.log("query", query);
+    
     //using the googleAPI from https://developers.google.com/books/docs/v1/getting_started#REST
     return axios.get("/api/google", { params: { q: "title:" + query } });
 },
