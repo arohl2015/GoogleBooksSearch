@@ -9,8 +9,11 @@ class Saved extends Component {
     savedBooks: [],
   };
   componentDidMount() {
-    API.getSavedBooks()
-      .then(({ data }) => this.setState({ savedBooks: data }))
+    API.getGoogleSearchBooks()
+      .then(({ data }) => {
+        this.setState({ savedBooks: data })
+        console.log(this.state.savedBooks)
+      })
       .catch((err) => console.log(err));
   }
   deleteBook = (index) => {
@@ -29,7 +32,7 @@ class Saved extends Component {
         </Jumbotron>
         <Wrapper>
           <div style={{ padding: "25px" }}>
-            {this.state.savedBooks.map((book) => (
+           {/* {this.state.savedBooks.items.map((book) => (
               <Container
                 sender="Saved"
                 title={book.title}
@@ -39,7 +42,7 @@ class Saved extends Component {
                 link={book.infoLink}
                 deleteBook={this.deleteBook}
               ></Container>
-            ))}
+            ))} */}
           </div>
         </Wrapper>
       </div>
