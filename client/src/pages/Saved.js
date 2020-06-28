@@ -14,7 +14,7 @@ class Saved extends Component {
     API.getBooks()
       .then(res => {
         this.setState({ savedBooks: res.data })
-        console.log(this.state.savedBooks.data)
+        console.log(this.state.savedBooks)
       })
       .catch((err) => console.log(err));
   }
@@ -37,11 +37,13 @@ class Saved extends Component {
           <div style={{ padding: "25px" }}>
            {this.state.savedBooks.map((book) => (
               <Buttons
+                key={book.title}
                 sender="Saved"
                 title={book.title}
                 authors={book.authors}
                 description={book.description}
-                // image={book.imageLinks.thumbnail}
+                id = {book._id}
+                image={book.image}
                 link={book.infoLink}
                 deleteBook={this.deleteBook}
               ></Buttons>

@@ -42,9 +42,11 @@ class Search extends Component {
         title: this.state.books[index].title,
         authors: this.state.books[index].authors,
         description: this.state.books[index].description,
-        // image: this.state.books[index].volumeInfo.imageLinks.thumbnail,
+        image: this.state.books[index].imageLinks.thumbnail,
         link: this.state.books[index].infoLink,
       };
+      console.log(savingBook);
+      
       API.saveBook(savingBook)
         .then((res) => {
           console.log("result", res);
@@ -78,7 +80,7 @@ class Search extends Component {
                   title={book.title}
                   authors={book.authors}
                   description={book.description}
-                //   image={book.imageLinks.thumbnail}
+                  image={book.imageLinks.thumbnail}
                   link={book.infoLink}
                   saveBook={() => this.saveBook(i)}
                   ></Buttons>
