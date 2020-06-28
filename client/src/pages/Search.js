@@ -3,8 +3,9 @@ import API from "../utils/API";
 import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
-import { Container} from "../components/Grid";
+// import { Container} from "../components/Grid";
 import Form from "../components/Form"; 
+import Buttons from "../components/Buttons";
 
 class Search extends Component {
     state = {
@@ -36,11 +37,11 @@ class Search extends Component {
     saveBook = (index) => {
       console.log(this.state.books[index]);
       const savingBook = {
-        title: this.state.books[index].volumeInfo.title,
-        authors: this.state.books[index].volumeInfo.authors,
-        description: this.state.books[index].volumeInfo.description,
-        image: this.state.books[index].volumeInfo.imageLinks.thumbnail,
-        link: this.state.books[index].volumeInfo.infoLink,
+        title: this.state.books[index].title,
+        authors: this.state.books[index].authors,
+        description: this.state.books[index].description,
+        // image: this.state.books[index].volumeInfo.imageLinks.thumbnail,
+        link: this.state.books[index].infoLink,
       };
       API.saveBook(savingBook)
         .then((res) => {
@@ -68,7 +69,7 @@ class Search extends Component {
           <Wrapper>
             <div style={{ padding: "25px" }}>
               {this.state.books.map((book) => (
-                <Container
+                <Buttons
                 key={book.title}
                 sender="Search"
                   title={book.title}
@@ -77,7 +78,7 @@ class Search extends Component {
                 //   image={book.imageLinks.thumbnail}
                   link={book.infoLink}
                   saveBook={this.saveBook}
-                  ></Container>
+                  ></Buttons>
                   ))}
             </div>
           </Wrapper>

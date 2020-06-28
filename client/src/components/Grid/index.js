@@ -7,10 +7,10 @@ import React from "react";
 export function Container( props ) {
     console.log(props)
     return ( <div>
-<h2> title: {props.title} </h2>
-<h2> authors: {props.authors} </h2>
-<h2> description: {props.description} </h2>
-<h2> link: {props.link} </h2>
+<h4> title: {props.title} </h4>
+<h4> authors: {props.authors} </h4>
+<h4> description: {props.description} </h4>
+<h4> link: {props.link} </h4>
 </div>
     )
     
