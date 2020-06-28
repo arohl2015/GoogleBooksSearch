@@ -35,6 +35,8 @@ class Search extends Component {
         .catch((err) => console.log(err))
         };
     saveBook = (index) => {
+      console.log(index)
+      console.log(this.state.books)
       console.log(this.state.books[index]);
       const savingBook = {
         title: this.state.books[index].title,
@@ -68,8 +70,9 @@ class Search extends Component {
           
           <Wrapper>
             <div style={{ padding: "25px" }}>
-              {this.state.books.map((book) => (
+              {this.state.books.map((book, i) => (
                 <Buttons
+              
                 key={book.title}
                 sender="Search"
                   title={book.title}
@@ -77,7 +80,7 @@ class Search extends Component {
                   description={book.description}
                 //   image={book.imageLinks.thumbnail}
                   link={book.infoLink}
-                  saveBook={this.saveBook}
+                  saveBook={() => this.saveBook(i)}
                   ></Buttons>
                   ))}
             </div>
