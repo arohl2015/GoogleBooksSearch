@@ -7,7 +7,7 @@ function Buttons(props) {
         <button
           type="button"
           className="btn btn-primary"
-          onClick={() => props.saveBook(props.index)}
+          onClick={props.saveBook}
         >
           Save Book
         </button>

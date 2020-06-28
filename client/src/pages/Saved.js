@@ -11,13 +11,14 @@ class Saved extends Component {
     savedBooks: [],
   };
   componentDidMount() {
-    API.getGoogleSearchBooks()
-      .then(({ data }) => {
-        this.setState({ savedBooks: data })
-        console.log(this.state.savedBooks)
+    API.getBooks()
+      .then(res => {
+        this.setState({ savedBooks: res.data })
+        console.log(this.state.savedBooks.data)
       })
       .catch((err) => console.log(err));
   }
+ 
   deleteBook = (index) => {
     API.deleteBook(index)
       .then((res) => {
@@ -34,7 +35,7 @@ class Saved extends Component {
         </Jumbotron>
         <Wrapper>
           <div style={{ padding: "25px" }}>
-           {this.state.savedBooks.items.map((book) => (
+           {this.state.savedBooks.map((book) => (
               <Buttons
                 sender="Saved"
                 title={book.title}
