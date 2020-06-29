@@ -5,6 +5,7 @@ import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
 // import { Container} from "../components/Grid";
 import Buttons from "../components/Buttons";
+import "./style.css";
 
 class Saved extends Component {
   state = {
@@ -30,9 +31,8 @@ class Saved extends Component {
   render() {
     return (
       <div>
-        <Jumbotron>
-          <Nav />
-        </Jumbotron>
+             <Nav/>
+        <Jumbotron/>
         <Wrapper>
           <div style={{ padding: "25px" }}>
            {this.state.savedBooks.map((book) => (

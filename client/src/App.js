@@ -11,8 +11,9 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <Nav />
-          <Jumbotron />
+          { <Nav />
+          // <Jumbotron />} 
+  }
           <Switch>
             {/* renders the Search page when "/" route is hit */}
             <Route exact path="/" component={Search}/> 

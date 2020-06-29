@@ -6,6 +6,7 @@ import Wrapper from "../components/Wrapper";
 // import { Container} from "../components/Grid";
 import Form from "../components/Form"; 
 import Buttons from "../components/Buttons";
+import "./style.css";
 
 class Search extends Component {
     state = {
@@ -61,7 +62,7 @@ class Search extends Component {
       return (
         <div>
           <Jumbotron>
-            <Nav />
+            <nav />
             <Form
               search={this.state.search}
               handleFormSubmit={this.handleFormSubmit}
@@ -87,7 +88,7 @@ class Search extends Component {
                   ))}
             </div>
           </Wrapper>
-              : <h2>no books</h2> }
+              : <h2>Search for a Book using the Search Bar above!</h2> }
         </div>
       );
     }
