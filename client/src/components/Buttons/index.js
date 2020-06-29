@@ -6,7 +6,7 @@ function Buttons(props) {
       return (
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn-secondary"
           onClick={props.saveBook}
         >
           Save Book
@@ -16,7 +16,7 @@ function Buttons(props) {
       return (
         <button
           type="button"
-          className="btn btn-primary"
+          className="btn btn-secondary"
           onClick={() => props.deleteBook(props.id)}
         >
           Delete Book
@@ -26,7 +26,7 @@ function Buttons(props) {
   };
 
   return (
-    <div className="card shadow" style={{ marginBottom: "40px" }}>
+    <div className="card shadow" style={{ marginBottom: "35px" }}>
       <div className="card-body">
         <div className="row">
           <div className="col">
@@ -36,7 +36,7 @@ function Buttons(props) {
           </div>
           <div className="col">
             <button
-              className="btn btn-primary"
+              className="btn btn-secondary"
               onClick={() => window.open(props.link, "_blank")}
               type="button"
             >
@@ -47,7 +47,7 @@ function Buttons(props) {
           <div className="w-100"></div>
           <div className="col">
             <img
-              style={{ width: "230px", height: "300px" }}
+              style={{ width: "250px", height: "250px" }}
               src={props.image}
               alt="Book"
             ></img>

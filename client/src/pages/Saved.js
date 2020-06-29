@@ -31,7 +31,7 @@ class Saved extends Component {
   render() {
     return (
       <div>
-             <Nav/>
+             {/* <Nav/> */}
         <Jumbotron/>
         <Wrapper>
           <div style={{ padding: "25px" }}>
