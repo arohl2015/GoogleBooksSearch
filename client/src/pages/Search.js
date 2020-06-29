@@ -62,7 +62,7 @@ class Search extends Component {
       return (
         <div>
           <Jumbotron>
-            <nav />
+            {/* <Nav /> */}
             <Form
               search={this.state.search}
               handleFormSubmit={this.handleFormSubmit}
