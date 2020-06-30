@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
 // import { Container} from "../components/Grid";
@@ -62,7 +61,7 @@ class Search extends Component {
       return (
         <div>
           <Jumbotron>
-            {/* <Nav /> */}
+       
             <Form
               search={this.state.search}
               handleFormSubmit={this.handleFormSubmit}
