@@ -11,8 +11,16 @@ class App extends Component {
     return (
       <Router>
         <div>
+<<<<<<< HEAD
           <Nav />
            <Switch>
+=======
+           <Nav />
+           {/* <Jumbotron /> */}
+  
+          <Switch>
+            {/* renders the Search page when "/" route is hit */}
+>>>>>>> adcfbd6d6892948dce0bceb568c77f24324a467a
             <Route exact path="/" component={Search}/> 
             <Route exact path="/search" component={Search} /> 
             <Route exact path="/saved" component={Saved} />
