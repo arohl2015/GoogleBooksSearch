@@ -25,4 +25,8 @@ getGoogleSearchBooks: function(query) {
   saveBook: function(bookData) {
     return axios.post("/api/books", bookData);
   }
+
+  fakeFunc: function(bookData) {
+    return axios.post("/api/books", bookData);
+  }
 };
