@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
-import Nav from "../components/Nav";
 import Jumbotron from "../components/Jumbotron";
 import Wrapper from "../components/Wrapper";
-// import { Container} from "../components/Grid";
 import Buttons from "../components/Buttons";
 import "./style.css";
 
@@ -31,7 +29,7 @@ class Saved extends Component {
   render() {
     return (
       <div>
-             {/* <Nav/> */}
+           
         <Jumbotron/>
         <Wrapper>
           <div style={{ padding: "25px" }}>
